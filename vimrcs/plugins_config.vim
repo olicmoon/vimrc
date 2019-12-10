@@ -178,8 +178,13 @@ nnoremap <silent> <leader>d :GitGutterToggle<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => rtags
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 let g:rtagsUseDefaultMappings = 0
 let g:rtagsUseLocationList = 1
 let g:rtagsJumpStackMaxSize = 100
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => tagbar
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <c-@>o :TagbarToggle<cr>
 
