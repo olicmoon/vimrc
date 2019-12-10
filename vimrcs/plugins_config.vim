@@ -179,7 +179,7 @@ nnoremap <silent> <leader>d :GitGutterToggle<cr>
 " => rtags
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let g:rtagsUseDefaultMappings = 1
-let g:rtagsUseLocationList = 0
+let g:rtagsUseDefaultMappings = 0
+let g:rtagsUseLocationList = 1
 let g:rtagsJumpStackMaxSize = 100
 
