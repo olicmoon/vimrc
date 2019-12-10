@@ -173,3 +173,13 @@ let g:ale_lint_on_enter = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:gitgutter_enabled=0
 nnoremap <silent> <leader>d :GitGutterToggle<cr>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => rtags
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:rtagsUseDefaultMappings = 1
+let g:rtagsUseLocationList = 0
+let g:rtagsJumpStackMaxSize = 100
+
