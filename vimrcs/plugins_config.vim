@@ -188,3 +188,6 @@ let g:rtagsJumpStackMaxSize = 100
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nmap <c-@>o :TagbarToggle<cr>
 
+
+let g:airline#extensions#tagbar#flags = 'f'  " show full tag hierarchy
+"
