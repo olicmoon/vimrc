@@ -186,7 +186,9 @@ let g:rtagsJumpStackMaxSize = 100
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => tagbar
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nmap <c-@><c-@> :TagbarToggle<cr>
+let g:tagbar_left = 1
+nmap <space> :TagbarToggle<cr>
+nmap <c-space> :TagbarOpenAutoClose<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
