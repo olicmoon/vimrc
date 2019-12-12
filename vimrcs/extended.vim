@@ -45,6 +45,7 @@ try
 catch
 endtry
 
+colorscheme gruvbox
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Command mode related
