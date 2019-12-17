@@ -105,7 +105,7 @@ else
     noremap <c-@>r :call rtags#FindRefsCallTree()<CR>
     noremap <c-@>p :call rtags#JumpToParent()<CR>
     noremap <c-@>t :call rtags#ShowHierarchy()<CR>
-    noremap <c-@>z :call rtags#ReindexFile()<CR>
+    noremap <c-@><c-@> :call rtags#ReindexFile()<CR>
 endif
 
 let s:script_folder_path = escape( expand( '<sfile>:p:h' ), '\' )
