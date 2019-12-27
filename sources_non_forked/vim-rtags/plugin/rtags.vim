@@ -102,6 +102,7 @@ else
     noremap <c-T>  :call rtags#JumpBack()<CR>
     noremap <c-@>a rn :call rtags#FindRefsByName(input("Pattern? ", "", "customlist,rtags#CompleteSymbols"))<CR>
     noremap <c-@>s :call rtags#FindRefs()<CR>
+    noremap <c-@>d :call rtags#FindDefs()<CR>
     noremap <c-@>r :call rtags#FindRefsCallTree()<CR>
     noremap <c-@>p :call rtags#JumpToParent()<CR>
     noremap <c-@>t :call rtags#ShowHierarchy()<CR>
@@ -812,6 +813,15 @@ endfunction
 
 function! rtags#FindRefs()
     let args = {
+                \ '-e' : '',
+                \ '-r' : rtags#getCurrentLocation() }
+
+    call rtags#ExecuteThen(args, [function('rtags#DisplayResults')])
+endfunction
+
+function! rtags#FindDefs()
+    let args = {
+                \ '--definition-only' : '',
                 \ '-e' : '',
                 \ '-r' : rtags#getCurrentLocation() }
 
