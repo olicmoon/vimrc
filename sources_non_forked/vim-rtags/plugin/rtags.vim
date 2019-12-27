@@ -102,6 +102,7 @@ else
     noremap <c-T>  :call rtags#JumpBack()<CR>
     noremap <c-@>a rn :call rtags#FindRefsByName(input("Pattern? ", "", "customlist,rtags#CompleteSymbols"))<CR>
     noremap <c-@>s :call rtags#FindRefs()<CR>
+    noremap <c-@>c :call rtags#FindUsage()<CR>
     noremap <c-@>d :call rtags#FindDefs()<CR>
     noremap <c-@>r :call rtags#FindRefsCallTree()<CR>
     noremap <c-@>p :call rtags#JumpToParent()<CR>
@@ -191,6 +192,9 @@ function! rtags#ParseResults(results)
     let nr = 1
     for record in a:results
         let [location; rest] = split(record, '\s\+')
+        let rest = join(rest, ' ')
+        let [rest; func] = split(rest, 'function: ')
+        let func = join(func, ' ')
         let [file, lnum, col] = rtags#parseSourceLocation(location)
 
         let entry = {}
@@ -202,7 +206,7 @@ function! rtags#ParseResults(results)
         let entry.col = col
         let entry.vcol = 0
         "        let entry.nr = nr
-        let entry.text = join(rest, ' ')
+        let entry.text = join([rest, func], " | ")
         let entry.type = 'ref'
 
         call add(locations, entry)
@@ -814,7 +818,18 @@ endfunction
 function! rtags#FindRefs()
     let args = {
                 \ '-e' : '',
-                \ '-r' : rtags#getCurrentLocation() }
+                \ '-r' : rtags#getCurrentLocation(),
+                \ '-o' : '' }
+
+    call rtags#ExecuteThen(args, [function('rtags#DisplayResults')])
+endfunction
+
+function! rtags#FindUsage()
+    let args = {
+                \ '-e' : '',
+                \ '-r' : rtags#getCurrentLocation(),
+                \ '--kind-filter' : '-declarations',
+                \ '-o' : '' }
 
     call rtags#ExecuteThen(args, [function('rtags#DisplayResults')])
 endfunction
