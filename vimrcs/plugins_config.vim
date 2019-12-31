@@ -195,3 +195,8 @@ nmap <c-space> :TagbarOpenAutoClose<cr>
 " => tagbar
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline#extensions#tagbar#flags = 'f'  " show full tag hierarchy
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => quickr_preview
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <leader><space> <plug>(quickr_preview_qf_close) :cclose<CR>:lclose<CR>

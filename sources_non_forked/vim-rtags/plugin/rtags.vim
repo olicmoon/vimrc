@@ -99,15 +99,16 @@ if g:rtagsUseDefaultMappings == 1
     noremap <Leader>rd :call rtags#Diagnostics()<CR>
 else
     noremap <c-]>  :call rtags#JumpTo(g:SAME_WINDOW)<CR>
+    noremap <c-w>] :call rtags#JumpTo(g:V_SPLIT)<CR>
     noremap <c-T>  :call rtags#JumpBack()<CR>
-    noremap <c-@>a rn :call rtags#FindRefsByName(input("Pattern? ", "", "customlist,rtags#CompleteSymbols"))<CR>
+    noremap <c-@>a :call rtags#FindRefsByName(input("Pattern? ", "", "customlist,rtags#CompleteSymbols"))<CR>
     noremap <c-@>s :call rtags#FindRefs()<CR>
     noremap <c-@>c :call rtags#FindUsage()<CR>
     noremap <c-@>d :call rtags#FindDefs()<CR>
     noremap <c-@>r :call rtags#FindRefsCallTree()<CR>
     noremap <c-@>p :call rtags#JumpToParent()<CR>
     noremap <c-@>t :call rtags#ShowHierarchy()<CR>
-    noremap <c-@><c-@> :call rtags#ReindexFile()<CR>
+    noremap <c-@><c-@> :lcl \| call rtags#ReindexFile() <CR>
 endif
 
 let s:script_folder_path = escape( expand( '<sfile>:p:h' ), '\' )
