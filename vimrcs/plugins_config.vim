@@ -174,6 +174,11 @@ let g:ale_lint_on_enter = 0
 let g:gitgutter_enabled=0
 nnoremap <silent> <leader>d :GitGutterToggle<cr>
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-clang
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:clang_c_options = '-std=gnu11'
+let g:clang_cpp_options = '-std=c++14'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => rtags
@@ -200,3 +205,5 @@ let g:airline#extensions#tagbar#flags = 'f'  " show full tag hierarchy
 " => quickr_preview
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nmap <leader><space> <plug>(quickr_preview_qf_close) :cclose<CR>:lclose<CR>
+
+
