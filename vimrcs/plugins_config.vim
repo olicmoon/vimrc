@@ -166,6 +166,7 @@ let g:ale_set_highlights = 0
 " Only run linting when saving the file
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
+let g:ale_c_build_dir = "./build"
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -173,12 +174,6 @@ let g:ale_lint_on_enter = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:gitgutter_enabled=0
 nnoremap <silent> <leader>d :GitGutterToggle<cr>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => vim-clang
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:clang_c_options = '-std=gnu11'
-let g:clang_cpp_options = '-std=c++14'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => rtags
