@@ -189,7 +189,6 @@ let g:rtagsJumpStackMaxSize = 100
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:tagbar_left = 1
 nmap <space> :TagbarToggle<cr>
-nmap <c-space> :TagbarOpenAutoClose<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -201,5 +200,7 @@ let g:airline#extensions#tagbar#flags = 'f'  " show full tag hierarchy
 " => quickr_preview
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nmap <leader><space> <plug>(quickr_preview_qf_close) :cclose<CR>:lclose<CR>
+
+nmap <leader>l :set nu!<cr>
 
 

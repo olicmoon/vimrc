@@ -180,7 +180,6 @@ set smarttab
 " 1 tab == 4 spaces
 set shiftwidth=4
 set tabstop=4
-setlocal cindent cino=j1,(0,ws,Ws
 set nu
 
 " Linebreak on 500 characters
@@ -190,6 +189,7 @@ set tw=500
 set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
+setlocal cindent cino=j1,(0,ws,Ws
 
 
 """"""""""""""""""""""""""""""
